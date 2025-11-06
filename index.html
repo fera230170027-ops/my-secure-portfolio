@@ -1,48 +1,14 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Secure Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="home">
-        <h1>Selamat Datang di My Secure Portfolio</h1>
-        <p>Ini website berbasis cloud dengan SSL dan firewall untuk tugas Cloud Computing.</p>
-        <img src="https://via.placeholder.com/800x400?text=Portfolio+Gambar" alt="Gambar Portfolio">
-    </section>
-    
-    <section id="about">
-        <h2>Tentang Proyek</h2>
-        <p>Website ini diamankan dengan Cloudflare dan Let's Encrypt. Dibuat untuk studi kasus keamanan cloud.</p>
-    </section>
-    
-    <section id="contact">
-        <h2>Hubungi Saya</h2>
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact">
-            <label>Nama: <input type="text" name="name" required></label><br>
-            <label>Email: <input type="email" name="email" required></label><br>
-            <label>Pesan: <textarea name="message" required></textarea></label><br>
-            <button type="submit">Kirim Aman</button>
-        </form>
-    </section>
-    
-    <footer>
-        <p>&copy; 2023 My Secure Portfolio. Diamankan dengan Cloudflare.</p>
-    </footer>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+<form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Nama: <input type="text" name="name" required></label>
+  </p>
+  <p>
+    <label>Email: <input type="email" name="email" required></label>
+  </p>
+  <p>
+    <label>Pesan: <textarea name="message" required></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Kirim Aman</button>
+  </p>
+</form>
