@@ -3,23 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Kontak</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Form Kontak | My Secure Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Form Kontak</h1>
+  <h1>Form Kontak 💙</h1>
 
-  <form action="https://formspree.io/f/yourFormID" method="POST">
-  <label>Nama:</label><br>
-  <input type="text" name="name" required><br><br>
+  <form id="contactForm">
+    <label>Nama:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
 
-  <label>Email:</label><br>
-  <input type="email" name="email" required><br><br>
+    <label>Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
 
-  <label>Pesan:</label><br>
-  <textarea name="message" rows="4" required></textarea><br><br>
+    <label>Pesan:</label><br>
+    <textarea id="message" name="message" rows="4" required></textarea><br><br>
 
-  <button type="submit">Kirim 💙</button>
-</form>
+    <button type="submit">Kirim 💙</button>
+  </form>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      fetch("https://script.google.com/macros/s/AKfycbx88qi2OaqNGxpT-2YNbWiwlK8DK1laZcpE7L5AxpgRVrvIs_lcc9x9k0erLd7Rg69dcg/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("Pesan berhasil dikirim 💙");
+        document.getElementById("contactForm").reset();
+      })
+      .catch(err => {
+        alert("Gagal mengirim pesan 😢");
+        console.error(err);
+      });
+    });
+  </script>
 </body>
 </html>
