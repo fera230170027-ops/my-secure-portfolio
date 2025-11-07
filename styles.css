@@ -1,41 +1,80 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f9fc;
+  font-family: "Poppins", sans-serif;
+  background-color: #d6ecff; /* biru muda lembut */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  margin: 0;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 h1 {
-  color: #333;
+  color: #2b4c7e;
   margin-bottom: 20px;
 }
 
 form {
   background: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width: 300px;
+  padding: 25px 35px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  color: #2b4c7e;
 }
 
 input, textarea, button {
   width: 100%;
   padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin-top: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
 }
 
 button {
-  background-color: #007bff;
-  color: white;
+  margin-top: 15px;
+  background-color: #8ecbff; /* biru muda utama */
+  color: #ffffff;
   border: none;
   cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #64b3ff; /* sedikit lebih gelap pas hover */
+  transform: scale(1.03);
+}
+
+a.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #8ecbff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+a.back-btn:hover {
+  background-color: #64b3ff;
+  transform: scale(1.03);
 }
