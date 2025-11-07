@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Kontak</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Kontak | My Secure Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Form Kontak</h1>
+  <h1>Form Kontak 💙</h1>
 
-  <form action="success.html" method="get">
-    <label for="name">Nama:</label><br>
+  <form id="contactForm">
+    <label>Nama:</label><br>
     <input type="text" id="name" name="name" required><br><br>
 
-    <label for="email">Email:</label><br>
+    <label>Email:</label><br>
     <input type="email" id="email" name="email" required><br><br>
 
-    <label for="message">Pesan:</label><br>
+    <label>Pesan:</label><br>
     <textarea id="message" name="message" rows="4" required></textarea><br><br>
 
     <button type="submit">Kirim 💙</button>
   </form>
+
+  <script>
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    fetch("https://script.google.com/macros/s/AKfycbw1jxypSdmIMy_GcIjBmSWnVhowk3Ehlzqw2mIsCrF8V6I1-TwhkPUexXrhXwHOG0uV3A/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Pesan berhasil dikirim 💙");
+      document.getElementById("contactForm").reset();
+    })
+    .catch(error => {
+      alert("Gagal mengirim pesan 😢");
+      console.error(error);
+    });
+  });
+  </script>
 </body>
 </html>
