@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Kontak | My Secure Portfolio</title>
+  <title>Form Kontak 💙 | My Secure Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -35,14 +35,14 @@
           message: document.getElementById("message").value
         })
       })
-      .then(res => res.json())
+      .then(response => response.json())
       .then(data => {
         alert("Pesan berhasil dikirim 💙");
         document.getElementById("contactForm").reset();
       })
-      .catch(err => {
+      .catch(error => {
         alert("Gagal mengirim pesan 😢");
-        console.error(err);
+        console.error(error);
       });
     });
   </script>
