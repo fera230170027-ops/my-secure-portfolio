@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form Kontak 💙 | My Secure Portfolio</title>
+  <title>Form Kontak 💙</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -23,7 +23,7 @@
   </form>
 
   <script>
-    document.getElementById("contactForm").addEventListener("submit", function(e){
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
       fetch("https://script.google.com/macros/s/AKfycbx88qi2OaqNGxpT-2YNbWiwlK8DK1laZcpE7L5AxpgRVrvIs_lcc9x9k0erLd7Rg69dcg/exec", {
@@ -35,14 +35,18 @@
           message: document.getElementById("message").value
         })
       })
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
-        alert("Pesan berhasil dikirim 💙");
-        document.getElementById("contactForm").reset();
+        if (data.success) {
+          alert("Pesan berhasil dikirim 💙");
+          document.getElementById("contactForm").reset();
+        } else {
+          alert("Gagal mengirim pesan 😢 (cek Google Script log)");
+        }
       })
-      .catch(error => {
+      .catch(err => {
         alert("Gagal mengirim pesan 😢");
-        console.error(error);
+        console.error("Error:", err);
       });
     });
   </script>
